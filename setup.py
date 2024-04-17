@@ -7,7 +7,8 @@ from setuptools import (
 )
 
 python_requires = ">=3.8"
-setup_requires = ["setuptools_scm"]
+# setup_requires = ["setuptools_scm"]
+setup_requires = []
 install_requires = [
     "databases[postgresql]>=0.5.4,<1.0.0",
     "ormar>=0.10.24,<1.0.0",
@@ -60,11 +61,12 @@ if __name__ in ["__main__", "builtins"]:
         url="https://github.com/tophat/ormar-postgres-extensions",
         long_description=readme(),
         long_description_content_type="text/markdown",
-        use_scm_version={
-            "local_scheme": lambda _: "",
-            "version_scheme": version_scheme,
-            "write_to": "version.txt",
-        },
+        # use_scm_version={
+        #     "local_scheme": lambda _: "",
+        #     "version_scheme": version_scheme,
+        #     "write_to": "version.txt",
+        # },
+        version="2.3.0+pydantic2",
         package_dir={"": "src"},
         package_data={"": ["VERSION"]},
         packages=find_packages("./src"),
